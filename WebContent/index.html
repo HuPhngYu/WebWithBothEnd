@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/game.js"></script>
+        <title>Still No Album</title>
+    </head>
+    <body onload="load()">
+        <div class="container">
+            <div id="nav-placeholder"></div>
+            <!-- first row -->
+            <div class="row">
+                <div class="col-md-offset-3 col-md-2">
+                    <button class="btn btn-primary btn-block" onclick="save()">Save Game</button>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary btn-block" onclick="load()">Load Game</button>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-danger btn-block" onclick="deleteSave()">Delete</button>
+                </div>
+            </div>
+            <!-- second row -->
+            <div class="row">
+                <div class="col-md-5">
+                    <h3>You have: <span id="adams">0</span> Adams (and still 0 album lol)</h3>
+                    <h4><span id="persec">0</span> adams per sec</h4>
+                    <div>
+                        <strong>Cursors: </strong><span id="cursors">0</span> (each cursor generates 1 adam/sec)
+                    </div>
+                    <div>
+                        <strong>Puppies: </strong><span id="puppies">0</span> (each puppy calls 10 adams/sec)
+                    </div>
+                    <div>
+                        <strong>Boyfriends: </strong><span id="boyfriends">0</span> (each boyfriend attracts 50 adams/sec)
+                    </div>
+                    <div>
+                        <strong>Concerts: </strong><span id="concerts">0</span> (each concert gathers 100 adams/sec)
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h4>Items</h4>
+                    <button class="btn btn-success btn-block" onclick="getAdam(1)">Get An Adam!</button>
+                    <button class="btn btn-default btn-block" onclick="buyCursor()">Buy A Cursor (<span id="cursorCost">10</span>)</button>
+                    <button class="btn btn-default btn-block" onclick="buyPuppy()">Buy A Puppy (<span id="puppyCost">100</span>)</button>
+                    <button class="btn btn-default btn-block" onclick="buyBoyfriend()">Buy A Boyfriend (<span id="boyfriendCost">500</span>)</button>
+                    <button class="btn btn-default btn-block" onclick="buyConcert()">Organize a Concert (<span id="concertCost">1000</span>)</button>
+                </div>
+                <div class="col-md-3">
+                    <h4>Upgrades</h4>
+                    Coming soon
+                </div>
+            </div>
+            <!-- third row -->
+            <div class="row">
+                <div class="alert alert-info fadeout" id="fadeout-alert" style="display: none;">
+                    <span id="message"></span>
+                    <span class="closebtn" onclick="this.parentElement.style.display = 'none';">&times;</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
